@@ -29,6 +29,6 @@
 		"url": "git://github.com/popeindustries/transfigure.git"
 	},
   "readmeFilename": "README.md",
-	"readme": "[![Build Status](https://travis-ci.org/popeindustries/transfigure.png)](https://travis-ci.org/popeindustries/transfigure)\n\n# transfigure\n\nTransform the content of coffeescript|livescript|handlebars|stylus|less|jade to js|css|html.\n",
+	"readme": "[![Build Status](https://travis-ci.org/popeindustries/transfigure.png)](https://travis-ci.org/popeindustries/transfigure)\n\n# transfigure\n\nTransform the content of coffeescript/livescript/handlebars/stylus/less/jade to js/css/html.\n",
 	"license": "MIT"
 }
