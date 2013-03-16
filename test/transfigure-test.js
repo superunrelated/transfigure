@@ -55,6 +55,12 @@ describe('transfigure', function() {
 			done();
 		});
 	});
+	it('should accept a .html file path and return HTML content', function(done) {
+		transfigure(path.resolve('foo.html'), function(err, content) {
+			content.should.eql(fs.readFileSync(path.resolve('foo.html'), 'utf8'));
+			done();
+		});
+	});
 	it('should accept a .jade file path and return HTML content', function(done) {
 		transfigure(path.resolve('foo.jade'), function(err, content) {
 			content.should.eql(fs.readFileSync(path.resolve('compiled/foo-jade.html'), 'utf8'));

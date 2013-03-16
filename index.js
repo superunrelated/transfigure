@@ -4,6 +4,7 @@ var path = require('path')
 	, COMPILERS = {
 		'js': '',
 		'css': '',
+		'html': '',
 		'coffee': 'coffeescript',
 		'ls': 'livescript',
 		'hbs': 'handlebars',
