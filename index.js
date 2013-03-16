@@ -1,3 +1,5 @@
+// TODO: source maps
+
 var path = require('path')
 	, fs = require('fs')
 	, existsSync = fs.existsSync || path.existsSync
@@ -18,7 +20,7 @@ var path = require('path')
  * Read file contents at 'filepath' and convert to js/css/html
  * @param {String} filepath
  * @param {Object} options
- * @param {Function} fn(err, contents)
+ * @param {Function} fn(err, content)
  */
 module.exports = function(filepath, options, fn) {
 	if (!fn && 'function' == typeof options) {
@@ -36,7 +38,7 @@ module.exports = function(filepath, options, fn) {
  * @param {String} extension
  * @param {String} content
  * @param {Object} options
- * @param {Function} fn(err, contents)
+ * @param {Function} fn(err, content)
  */
 function compile (extension, content, options, fn) {
 	if (COMPILERS[extension]) {
