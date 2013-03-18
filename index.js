@@ -19,7 +19,7 @@ var path = require('path')
 /**
  * Read file contents at 'filepath' and convert to js/css/html
  * @param {String} filepath
- * @param {Object} options
+ * @param {Object} [options]
  * @param {Function} fn(err, content)
  */
 module.exports = function(filepath, options, fn) {
