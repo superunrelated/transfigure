@@ -17,33 +17,20 @@ var path = require('path')
 	};
 
 /**
- * Read file contents at 'filepath' and convert to js/css/html
- * @param {String} filepath
+ * Convert 'file' contents to js/css/html
+ * @param {Object} file {extension, filename, content}
  * @param {Object} [options]
- * @param {Function} fn(err, content)
+ * @param {Function} fn(err, file)
  */
-module.exports = function(filepath, options, fn) {
+module.exports = function(file, options, fn) {
 	if (!fn && 'function' == typeof options) {
 		fn = options;
 		options = {};
 	}
-	var content = fs.readFileSync(filepath, 'utf8')
-		, extension = path.extname(filepath).slice(1);
-	options.filepath = options.filename = filepath;
-	compile(extension, content, options, fn);
-};
-
-/**
- * Compile 'content'
- * @param {String} extension
- * @param {String} content
- * @param {Object} options
- * @param {Function} fn(err, content)
- */
-function compile (extension, content, options, fn) {
-	if (COMPILERS[extension]) {
-		require('./lib/' + COMPILERS[extension])(content, options, fn);
+	options.filepath = options.filename = file.filepath;
+	if (COMPILERS[file.extension]) {
+		return require('./lib/' + COMPILERS[file.extension])(file, options, fn);
 	} else {
-		fn(null, content);
+		return fn('no compiler found for ' + options.filepath, file);
 	}
-}
+};
