@@ -30,6 +30,8 @@ module.exports = function(file, options, fn) {
 	options.filepath = options.filename = file.filepath;
 	if (COMPILERS[file.extension]) {
 		return require('./lib/' + COMPILERS[file.extension])(file, options, fn);
+	} else if (COMPILERS[file.extension] != null) {
+		return fn(null, file);
 	} else {
 		return fn('no compiler found for ' + options.filepath, file);
 	}
