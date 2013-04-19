@@ -76,6 +76,13 @@ describe('transfigure', function() {
 			done();
 		});
 	});
+	it('should accept a .twig file path and return HTML content', function(done) {
+		transfigure({filepath: path.resolve('foo.twig'), extension:'twig', content: fs.readFileSync(path.resolve('foo.twig'), 'utf8')}, {heading:'Cats cats cats!'}, function(err, file) {
+			should.not.exist(err);
+			file.content.should.eql(fs.readFileSync(path.resolve('compiled/foo-twig.html'), 'utf8'));
+			done();
+		});
+	});
 	it('should return an error when compiling a malformed file', function(done) {
 		transfigure({filepath: path.resolve('foo-bad.coffee'), extension:'coffee', content: fs.readFileSync(path.resolve('foo.coffee'), 'utf8')}, function(err, file) {
 			should.exist(err);

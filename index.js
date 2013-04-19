@@ -13,7 +13,8 @@ var path = require('path')
 		'handlebars': 'handlebars',
 		'styl': 'stylus',
 		'less': 'less',
-		'jade': 'jade'
+		'jade': 'jade',
+		'twig': 'twig'
 	};
 
 /**
