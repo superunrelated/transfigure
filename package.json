@@ -1,7 +1,7 @@
 {
   "name": "transfigure",
-  "description": "Transform the content of coffeescript|livescript|handlebars|stylus|less|jade to js|css|html",
-  "version": "0.4.0",
+  "description": "Transform the content of coffeescript|livescript|handlebars|stylus|less|jade|twig to js|css|html",
+  "version": "0.5.0",
   "author": "popeindustries <alex@pope-industries.com>",
   "keywords": [
     "compile",
@@ -11,6 +11,7 @@
     "livescript",
     "handlebars",
     "jade",
+    "twig",
     "js",
     "css",
     "buddy"
@@ -42,6 +43,6 @@
     "url": "git://github.com/popeindustries/transfigure.git"
   },
   "readmeFilename": "README.md",
-  "readme": "[![Build Status](https://travis-ci.org/popeindustries/transfigure.png)](https://travis-ci.org/popeindustries/transfigure)\n\n# transfigure\n\nTransform the content of coffeescript/livescript/handlebars/stylus/less/jade to js/css/html.\n",
+  "readme": "[![Build Status](https://travis-ci.org/popeindustries/transfigure.png)](https://travis-ci.org/popeindustries/transfigure)\n\n# transfigure\n\nTransform the content of coffeescript/livescript/handlebars/stylus/less/jade/twig to js/css/html.\n",
   "license": "MIT"
 }
