@@ -1,7 +1,7 @@
 {
   "name": "transfigure",
   "description": "Transform the content of coffeescript|livescript|handlebars|stylus|less|jade|twig to js|css|html",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "popeindustries <alex@pope-industries.com>",
   "keywords": [
     "compile",
