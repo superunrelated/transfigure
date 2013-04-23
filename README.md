@@ -2,4 +2,4 @@
 
 # transfigure
 
-Transform the content of coffeescript/livescript/handlebars/stylus/less/jade/twig to js/css/html.
+Transform the content of coffeescript/livescript/handlebars/dust/stylus/less/jade/twig to js/css/html.
