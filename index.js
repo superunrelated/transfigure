@@ -23,7 +23,7 @@ var path = require('path')
  * @param {String} filepath
  * @param {String} content
  * @param {Object} [options]
- * @param {Function} fn(err, file)
+ * @param {Function} fn(err, content)
  */
 module.exports = function(filepath, content, options, fn) {
 	if (!fn && 'function' == typeof options) {
