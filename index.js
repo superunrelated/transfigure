@@ -14,26 +14,32 @@ var path = require('path')
 		'styl': 'stylus',
 		'less': 'less',
 		'jade': 'jade',
-		'twig': 'twig'
+		'twig': 'twig',
+		'dust': 'dust'
 	};
 
 /**
- * Convert 'file' contents to js/css/html
- * @param {Object} file {extension, filename, content}
+ * Convert contents to js/css/html
+ * @param {String} filepath
+ * @param {String} content
  * @param {Object} [options]
  * @param {Function} fn(err, file)
  */
-module.exports = function(file, options, fn) {
+module.exports = function(filepath, content, options, fn) {
 	if (!fn && 'function' == typeof options) {
 		fn = options;
 		options = {};
 	}
-	options.filepath = options.filename = file.filepath;
-	if (COMPILERS[file.extension]) {
-		return require('./lib/' + COMPILERS[file.extension])(file, options, fn);
-	} else if (COMPILERS[file.extension] != null) {
-		return fn(null, file);
+	var extension = path.extname(filepath).slice(1)
+		, name = path.basename(filepath).replace(extension, '');
+	options.filepath = options.filename = filepath;
+	options.extension = extension;
+	options.name = name;
+	if (COMPILERS[extension]) {
+		return require('./lib/' + COMPILERS[extension])(content, options, fn);
+	} else if (COMPILERS[extension] != null) {
+		return fn(null, content);
 	} else {
-		return fn('no compiler found for ' + options.filepath, file);
+		return fn('no compiler found for ' + filepath, content);
 	}
 };
